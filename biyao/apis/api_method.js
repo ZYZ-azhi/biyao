@@ -30,7 +30,7 @@ export const hotgood = page => {
 	// console.log(api.hotgoods);
 	return axios({
 		method: "GET",
-		url: baseUrl + api.hotgoods + page,
+		url: baseUrl + api.hotgoods,
 	})
 }
 // // 每日上新
@@ -41,11 +41,18 @@ export const newgood = () => {
 	})
 }
 // // 分类
-// // 二级分类
-export const twogoods = onename => {
+// // 一级分类
+export const getTypeOne = (a) => {
 	return axios({
 		method: "get",
-		url: baseUrl + api.goods + onename,
+		url: baseUrl + "/getTypeOne",
+	})
+}
+// // 二级分类
+export const twogoods = (a) => {
+	return axios({
+		method: "get",
+		url: baseUrl + '/goodlist?type_one=' + a,
 	})
 }
 // // 二级分类商品
