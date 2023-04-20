@@ -30,7 +30,7 @@ export const hotgood = page => {
 	// console.log(api.hotgoods);
 	return axios({
 		method: "GET",
-		url: baseUrl + api.hotgoods,
+		url: baseUrl + api.hotgoods + page,
 	})
 }
 // // 每日上新
